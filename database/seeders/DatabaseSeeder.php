@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+         \App\Models\ToDoList::factory(10)->create();
+        // Assuming to do list does not belongs to a user
+        //$this->call(UserSeeder::class);
+        
     }
 }

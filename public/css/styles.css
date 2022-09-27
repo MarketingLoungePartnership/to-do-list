@@ -1,0 +1,52 @@
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child1 {
+    padding: 20px;
+    
+}
+
+.float-child2 {
+    /* width: 50%;
+    float: right; */
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #d9d9d9;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    background-color: white;
+    border-radius: 4px;
+}
+
+.float-img{
+    margin: 20px;
+}
+
+.float-footer{    
+    margin-top: 200px;
+    display: block;
+    text-align: center;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #337ab7;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.deleteform
+{
+display:inline;
+float:right;
+margin: 0px 3px
+}
+
+body{
+    background-color: #f1f1f1 !important    
+}
