@@ -23,25 +23,25 @@ You must demonstrate the following abilities/skills: make models, controllers, m
 
 ## My Notes
 
-# Assumptions
+**Assumptions**
 The To do list does not belongs to a user. Therefore I have not used Authorizations, ORM relationships
 This is a simple CRUD type application, therefore I did not follow apiResource route
 
-# Validation
+**Validation**
 I have created a Validation request file, but did not use it as there are no complex form validations to be done
 otherwise we must use Validation request file as Dependecy Injection in CRUD functions
 
-# Model
+**Model**
 Model has getters and setters. I did not need to add any extra functions to run Queries
 
-# Testing
+**Testing**
 I did not spend the time writing Unit Tests. Let me know if you still require.
 
-# factory file and seeders
+**Factory file and seeders**
 I have created the factory file using faker function to created data
 and DabaseSeeder has instructions to create data
 
-# artisan commands
+**artisan commands**
 php artisan migrate:fresh
 php artisan db:seed
 
