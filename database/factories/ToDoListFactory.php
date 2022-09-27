@@ -26,7 +26,7 @@ class ToDoListFactory extends Factory
     {
         return [
             'description'=> $this->faker->sentence(3),
-            'status' =>$this->faker->boolean(1)
+            'status' =>$this->faker->boolean(0)
             
         ];
     }

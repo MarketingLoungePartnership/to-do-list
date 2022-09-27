@@ -15,11 +15,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(5)
+        /* User::factory(5)
         ->create()
         ->each(function($user){
             ToDoList::factory(10)
             ->create(['user_id'=> $user->id]);
-        });
+        }); */
     }
 }

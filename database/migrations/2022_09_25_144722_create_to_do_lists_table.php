@@ -14,11 +14,11 @@ class CreateToDoListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('to_do_lists', function (Blueprint $table) {
+        Schema::create('todolists', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class,'user_id');
-            $table->string('description');
-            $table->boolean('status');
+            //$table->foreignIdFor(User::class,'user_id')->default(0);
+            $table->string('description')->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateToDoListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('to_do_lists');
+        Schema::dropIfExists('todolists');
     }
 }
