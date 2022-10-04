@@ -1,0 +1,74 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f1f1f1;
+  font-family: "Lato", sans-serif;
+  color: #333333;
+}
+
+header {
+  padding: 2rem 0;
+}
+header .container img {
+  display: block;
+}
+
+.container#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.container#app aside {
+  width: 30%;
+  padding-right: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container#app aside form input[type=submit] {
+  width: 100%;
+  margin-top: 1rem;
+}
+@media (max-width: 975px) {
+  .container#app aside {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.container#app main {
+  width: calc(70% - 1rem);
+  margin-left: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  padding: 1rem;
+}
+@media (max-width: 975px) {
+  .container#app main {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.container#app main table th:first-of-type {
+  width: 40px;
+}
+.container#app main table tbody tr td.actions button svg {
+  fill: white;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+.container#app main table tbody tr td:last-of-type {
+  width: 120px;
+}
+.container#app .copyright {
+  margin-top: 4rem;
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,81 @@
+@import "import/import";
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f1f1f1;
+    font-family: "Lato", sans-serif;
+    color: $textPrimary;
+}
+
+header {
+    padding: 2rem 0;
+    .container {
+        img {
+            display: block;
+        }
+    }
+}
+
+.container#app {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    aside {
+        width: 30%;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        form{
+            input[type=submit]{
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+        @media (max-width: 975px){
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+    main{
+        width: calc(70% - 1rem);
+        margin-left: 1rem;
+        box-sizing: border-box;
+        background-color: white;
+        border: 1px solid darken(white, 10);
+        border-radius: 6px;
+        padding: 1rem;
+        @media (max-width: 975px){
+            width: 100%;
+            margin-left: 0;
+        }
+        table{
+            th{
+                &:first-of-type{
+                   width: 40px;
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        &.actions{
+                            button{
+                                svg{
+                                    fill: white;
+                                    transform: translateY(3px);
+                                }
+                            }
+                        }
+                        &:last-of-type{
+                            width: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright{
+        margin-top: 4rem;
+        width: 100%;
+        text-align: center;
+    }
+}
