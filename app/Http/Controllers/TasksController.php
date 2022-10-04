@@ -50,6 +50,7 @@ class TasksController extends Controller
 
         return back();
     }
+
     /**
      * Marks task as complete
      *
@@ -61,6 +62,22 @@ class TasksController extends Controller
         if($task->user_id === Auth::user()->id){
             $task->complete = 1;
             $task->save();
+        } else{
+            abort(403);
+        }
+        return back();
+    }
+
+    /**
+     * Deletes task
+     *
+     * @param int $id
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id){
+        $task = Task::find($id);
+        if($task->user_id === Auth::user()->id){
+            $task->delete();
         } else{
             abort(403);
         }
