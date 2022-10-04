@@ -57,7 +57,13 @@ header {
             tbody{
                 tr{
                     td{
+                        &.complete{
+                            text-decoration: line-through;
+                        }
                         &.actions{
+                            form{
+                                display: none;
+                            }
                             button{
                                 svg{
                                     fill: white;

@@ -59,6 +59,12 @@ header .container img {
 .container#app main table th:first-of-type {
   width: 40px;
 }
+.container#app main table tbody tr td.complete {
+  text-decoration: line-through;
+}
+.container#app main table tbody tr td.actions form {
+  display: none;
+}
 .container#app main table tbody tr td.actions button svg {
   fill: white;
   -webkit-transform: translateY(3px);
