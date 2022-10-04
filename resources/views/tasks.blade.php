@@ -40,38 +40,48 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if($tasks->count())
+                        @foreach($tasks as $task)
+                            <tr>
+                                <td>
+                                    {{ $task->id }}
+                                </td>
+                                <td @if($task->complete)class="complete"@endif>
+                                    {{ $task->task }}
+                                </td>
+                                <td class="actions">
+                                    @if(!$task->complete)
+                                    <form method="POST" action="/task/{{ $task->id }}" id="completeButton">@method('PUT')@csrf</form>
+                                    <button type="button" class="btn btn-success" onclick="document.getElementById('completeButton').submit();">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20">
+                                            <path
+                                                d="M7.979 15.125q-.25 0-.5-.104t-.458-.313L3.5 11.188q-.396-.396-.385-.969.01-.573.406-.969t.979-.396q.583 0 .979.396l2.542 2.542 6.521-6.521q.396-.396.948-.406.552-.011.968.406.396.396.396.958 0 .563-.396.959l-7.52 7.52q-.209.209-.459.313-.25.104-.5.104Z" />
+                                        </svg>
+                                    </button>
+                                    <form method="POST" action="/task/{{ $task->id }}" id="deleteButton">@method('DELETE')@csrf</form>
+                                    <button type="button" class="btn btn-danger" onclick="document.getElementById('deleteButton').submit();">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20">
+                                            <path
+                                                d="m10 11.896-3.688 3.687q-.395.396-.937.386-.542-.011-.937-.407-.396-.395-.396-.947 0-.553.396-.948L8.104 10 4.417 6.312q-.396-.395-.386-.947.011-.553.407-.948.395-.396.947-.396.553 0 .948.396L10 8.104l3.688-3.687q.395-.396.947-.396.553 0 .948.396.396.395.396.948 0 .552-.396.947L11.896 10l3.687 3.688q.396.395.396.937t-.396.937q-.395.396-.948.396-.552 0-.947-.396Z" />
+                                        </svg>
+                                    </button>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
                     <tr>
                         <td>
-                            1
+                            &nbsp;
                         </td>
                         <td>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, iure laboriosam corporis
+                            You currently have no tasks
                         </td>
-                        <td class="actions">
-                            <button type="button" class="btn btn-success">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M7.979 15.125q-.25 0-.5-.104t-.458-.313L3.5 11.188q-.396-.396-.385-.969.01-.573.406-.969t.979-.396q.583 0 .979.396l2.542 2.542 6.521-6.521q.396-.396.948-.406.552-.011.968.406.396.396.396.958 0 .563-.396.959l-7.52 7.52q-.209.209-.459.313-.25.104-.5.104Z"/></svg>
-                            </button>
-                            <button type="button" class="btn btn-danger">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="m10 11.896-3.688 3.687q-.395.396-.937.386-.542-.011-.937-.407-.396-.395-.396-.947 0-.553.396-.948L8.104 10 4.417 6.312q-.396-.395-.386-.947.011-.553.407-.948.395-.396.947-.396.553 0 .948.396L10 8.104l3.688-3.687q.395-.396.947-.396.553 0 .948.396.396.395.396.948 0 .552-.396.947L11.896 10l3.687 3.688q.396.395.396.937t-.396.937q-.395.396-.948.396-.552 0-.947-.396Z"/></svg>
-                            </button>
+                        <td>
+                            &nbsp;
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, iure laboriosam corporis
-                        </td>
-                        <td class="actions">
-                            <button type="button" class="btn btn-success">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M7.979 15.125q-.25 0-.5-.104t-.458-.313L3.5 11.188q-.396-.396-.385-.969.01-.573.406-.969t.979-.396q.583 0 .979.396l2.542 2.542 6.521-6.521q.396-.396.948-.406.552-.011.968.406.396.396.396.958 0 .563-.396.959l-7.52 7.52q-.209.209-.459.313-.25.104-.5.104Z"/></svg>
-                            </button>
-                            <button type="button" class="btn btn-danger">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="m10 11.896-3.688 3.687q-.395.396-.937.386-.542-.011-.937-.407-.396-.395-.396-.947 0-.553.396-.948L8.104 10 4.417 6.312q-.396-.395-.386-.947.011-.553.407-.948.395-.396.947-.396.553 0 .948.396L10 8.104l3.688-3.687q.395-.396.947-.396.553 0 .948.396.396.395.396.948 0 .552-.396.947L11.896 10l3.687 3.688q.396.395.396.937t-.396.937q-.395.396-.948.396-.552 0-.947-.396Z"/></svg>
-                            </button>
-                        </td>
-                    </tr>
+                    @endif
                 </tbody>
             </table>
         </main>
