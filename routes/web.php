@@ -16,3 +16,5 @@ use App\Http\Controllers\TasksController;
 */
 
 Route::get('/', [TasksController::class, 'index']);
+
+Route::resource('/task', TasksController::class)->shallow();

@@ -31,4 +31,23 @@ class TasksController extends Controller
         $tasks = $user->tasks;
         return view('tasks', compact('tasks'));
     }
+
+    /**
+     * Stores task
+     *
+     * @param Request $request
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function store(Request $request){
+        $request->validate([
+            'taskName' => 'required'
+        ]);
+
+        Task::create([
+            'task' => $request->taskName,
+            'user_id' => Auth::user()->id
+        ]);
+
+        return back();
+    }
 }

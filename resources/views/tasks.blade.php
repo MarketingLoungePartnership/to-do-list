@@ -21,11 +21,20 @@
     </header>
     <div class="container" id="app">
         <aside>
-            <form action="" class="form-group">
+            <form action="/task" method="post" class="form-group">
                 @csrf
                 <input type="text" placeholder="Insert task name" name="taskName" id="taskName" class="form-control">
                 <input type="submit" value="Add" class="btn btn-primary">
             </form>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </aside>
         <main>
             <table class="table">
