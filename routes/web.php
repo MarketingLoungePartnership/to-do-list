@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TaskController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('tasks');
-});
+// Route::get('/', function () {
+//     return view('tasks');
+// });
+
+//Set home as task index page
+Route::get('/', [TaskController::class, 'index'])->name('home');
+
+//Complete task
+Route::get('task/{task}/complete', [TaskController::class, 'complete'])->name('task.complete');
+//Only include routes that are used
+Route::resource('task', TaskController::class)->only(['index', 'store', 'destroy']);
+
